@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MANIAC CITY</title>
+  </head>
+  <body>
+    <div id="menu" class="overlay visible">
+      <div class="panel">
+        <div class="logo">MANIAC CITY</div>
+        <div class="menu-buttons">
+          <button id="playBtn">Play</button>
+          <button id="settingsBtn">Settings</button>
+          <button id="quitBtn">Quit</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="settingsPanel" class="overlay hidden">
+      <div class="panel settings-panel">
+        <h2>Settings</h2>
+        <label>
+          Audio volume
+          <input id="audioVolume" type="range" min="0" max="100" value="70" />
+        </label>
+        <label>
+          Mouse sensitivity
+          <input id="mouseSensitivity" type="range" min="0.2" max="2" step="0.1" value="1" />
+        </label>
+        <button id="backFromSettings">Back</button>
+      </div>
+    </div>
+
+    <div id="pauseMenu" class="overlay hidden">
+      <div class="panel">
+        <h2>Paused</h2>
+        <div class="menu-buttons">
+          <button id="resumeBtn">Resume</button>
+          <button id="restartBtn">Restart Mission</button>
+          <button id="mainMenuBtn">Main Menu</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="hud" class="hud hidden">
+      <div class="hud-top">
+        <div class="left-stat">
+          <span class="label">Health</span>
+          <div class="bar"><div id="healthBar" class="fill health"></div></div>
+          <span id="healthText">100 / 100</span>
+        </div>
+        <div class="center-stat">
+          <span id="missionTitle">Mission</span>
+          <div id="missionText">Reach the marked destination.</div>
+        </div>
+        <div class="right-stat">
+          <span class="label">Cash</span>
+          <div id="cashText">$0</div>
+          <span class="label">Wanted</span>
+          <div id="wantedText">☆☆☆☆☆</div>
+        </div>
+      </div>
+      <div id="minimap" class="minimap">
+        <canvas id="miniCanvas" width="180" height="180"></canvas>
+      </div>
+      <div id="vehiclePrompt" class="prompt hidden">Press E to enter vehicle</div>
+      <div id="missionBanner" class="banner hidden"></div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
